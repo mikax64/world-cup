@@ -1,0 +1,47 @@
+
+
+
+
+
+
+<button (click)="resetScores()">Reset scores</button>
+
+
+<div class="group" *ngFor="let group of dataWorldcup.groups | keys  ; let i = index;">
+    
+<h1>GROUP {{getGroupName(i) | uppercase}}</h1>
+
+<ul class="groupMatchs">
+    <li *ngFor="let match of group.matches; let j = index;">
+        <p class="groupMatchs_team is-team1">
+            <span class="groupMatchs_teamName">{{getTeamName(match.home_team)}}</span>
+            <input type="number" min="0" class="groupMatchs_teamScore" [(ngModel)]="match.home_result" (ngModelChange) ="calculRanking(getGroupName(i))" />
+        </p>
+        <span class="groupMatchs_separator">-</span>
+        <p class="groupMatchs_team is-team2">
+            <span class="groupMatchs_teamName">{{getTeamName(match.away_team)}}</span>
+            <input type="number" min="0" class="groupMatchs_teamScore" [(ngModel)]="match.away_result" (ngModelChange) ="calculRanking(getGroupName(i))" />
+        </p>
+    </li>
+</ul>
+    
+
+<div class="wrapper-ranking">
+    <ul class="ranking-labels">
+        <li>Classement</li>
+        <li>Pts</li>
+        <li>Diff.</li>
+    </ul>
+    <ul class="ranking-table">
+
+        <li [attr.data-teamid]="team.id" [attr.data-order]="k" *ngFor="let team of groupArray[getGroupName(i)] | sortRanking; let k = index">
+            <p class="team">{{team.name}}</p>
+            <p class="points" >{{team.points}}</p>
+            <p class="diff">{{team.difference}}</p>
+        </li>
+
+    </ul>
+</div>
+</div>
+
+

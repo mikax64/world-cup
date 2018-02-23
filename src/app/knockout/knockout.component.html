@@ -1,0 +1,30 @@
+
+
+<h1>Phase finale</h1>
+
+<div class="knockout" *ngFor="let round of dataWorldcup.knockout | keys  ; let i = index;">
+<h2>{{round.name}}</h2>
+  <ul class="round">
+  <li *ngFor="let match of round.matches; let j = index;" >
+      <p class="knockout_team is-team1" [class.is-winner]="isWinner(match.name) === getTeamName(match.home_team, match.name)">
+          <span class="knockout_teamName">{{getTeamName(match.home_team, match.name)}}</span>
+          <input type="number" min="0" class="knockout_teamScore" [(ngModel)]="match.home_result" (ngModelChange) ="calculKnockout(round, match.name)" [disabled]="activeScore(getTeamName(match.home_team, match.name), getTeamName(match.away_team, match.name))"/>
+
+          <button *ngIf="match.away_result === match.home_result" (click)="winnerDraw(match.name, getTeamName(match.home_team, match.name))">Winner</button>
+      </p>
+      <span class="knockout_separator">-</span>
+      <p class="knockout_team is-team1" [class.is-winner]="isWinner(match.name) === getTeamName(match.away_team, match.name)" >
+        <span class="knockout_teamName">{{getTeamName(match.away_team, match.name)}}</span>
+        <input type="number" min="0" class="knockout_teamScore" [(ngModel)]="match.away_result" (ngModelChange) ="calculKnockout(round, match.name)" [disabled]="activeScore(getTeamName(match.home_team, match.name), getTeamName(match.away_team, match.name))" />
+        <button *ngIf="match.away_result === match.home_result" (click)="winnerDraw(match.name, getTeamName(match.away_team, match.name) )" >Winner</button>
+    </p>
+  </li>
+</ul>
+
+
+</div>
+
+
+
+    
+ 

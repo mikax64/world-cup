@@ -1,0 +1,11 @@
+.groupMatchs li{
+    display:flex;
+    align-items: center;
+}
+.groupMatchs_team{
+    display: flex;
+    align-items: center;
+}
+.groupMatchs_teamScore{
+    width:40px;
+}
