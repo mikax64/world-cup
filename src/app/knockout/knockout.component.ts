@@ -10,6 +10,7 @@ import { KnockoutInfo } from '../knockout-info';
 export class KnockoutComponent implements OnInit {
   groupArray: object;
   dataWorldcup: any;
+  teamsArray : any;
 
   knockoutData: any;
   knockoutInfo: KnockoutInfo;
@@ -21,14 +22,15 @@ export class KnockoutComponent implements OnInit {
     this.dataWorldcup = this._worldcupService.apiwc;
     this.groupArray = this._worldcupService.groupData;
     this.knockoutData = this._worldcupService.knockoutData;
+    this.teamsArray  = this._worldcupService.teamsData;
     this.initKnockout();
-    this.initScores();
+    //this.initScores();
   }
     // Create knockout Array
 
   initKnockout() {
 
-    for (var i = 0; i < 5; i++) { // 5 is the number of knockouts (16th,8th...)
+    for (var i = 0; i < 4; i++) { // 4 is the number of knockouts (16th,8th...)
       let roundName = Object.keys(this.knockoutData)[i];
 
 
@@ -44,7 +46,7 @@ export class KnockoutComponent implements OnInit {
   }
 
   initScores() {
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 4; i++) {
         let roundName = Object.keys(this.dataWorldcup.knockout)[i];
 
         for (var j = 0; j < this.dataWorldcup.knockout[roundName].matches.length; j++) {
@@ -111,6 +113,14 @@ activeScore(teamHome, teamAway){
         let awayResult = matchData.away_result;
         let homeTeam = matchData.home_team;
         let awayTeam = matchData.away_team;
+        
+        if(homeResult == null){
+          console.log("homeResult");
+          matchData.home_result = 0;
+        }
+        if(awayResult == null){
+          matchData.away_result = 0;
+        }
 
         matchResult = homeResult - awayResult;
 
@@ -169,6 +179,18 @@ activeScore(teamHome, teamAway){
 
   }
 
+  // Get team tag for knockout
+
+  getTeamTag(teamName) {
+
+    for (var i = 0; i < this.teamsArray.length; i++) {
+        if (this.teamsArray[i].name === teamName) {
+            return this.teamsArray[i].iso2;
+            
+        }
+    }
+}
+
   // Get the winner if draw
 
   winnerDraw(matchName, teamName) {
@@ -187,6 +209,16 @@ activeScore(teamHome, teamAway){
         return this.knockoutArray[j].winner;
       }
     }
+
+  }
+
+  testClass(matchName, teamName){
+    if(this.isWinner(matchName) === this.getTeamName(teamName, matchName) && this.isWinner(matchName)!= null){
+        return true;
+    }else{
+      return false;
+    }
+    
 
   }
 

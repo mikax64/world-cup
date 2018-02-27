@@ -85,7 +85,15 @@ export class GroupMatchsComponent implements OnInit {
         }
     }
 
-    
+    getTeamTag(teamId) {
+
+        for (var i = 0; i < this.teamsArray.length; i++) {
+            if (this.teamsArray[i].id === teamId) {
+                return this.teamsArray[i].iso2;
+                
+            }
+        }
+    }
 
 
     calculRanking(groupName) {
@@ -138,8 +146,12 @@ export class GroupMatchsComponent implements OnInit {
                     }
 
                     currentGroup[j].difference -= matchResult;
+       
+                    }
                 }
+                
             }
+            
         }
 
     }

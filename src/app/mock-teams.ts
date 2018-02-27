@@ -79,162 +79,162 @@ export const APIWC = [
     {
       "id": 1,
       "name": "Russia",
-      "iso2": "ru"
+      "iso2": "RU"
     },
     {
       "id": 2,
       "name": "Saudi Arabia",
-      "iso2": "sa"
+      "iso2": "SA"
     },
     {
       "id": 3,
       "name": "Egypt",
-      "iso2": "eg"
+      "iso2": "EG"
     },
     {
       "id": 4,
       "name": "Uruguay",
-      "iso2": "uy"
+      "iso2": "UY"
     },
     {
       "id": 5,
       "name": "Portugal",
-      "iso2": "pt"
+      "iso2": "PT"
     },
     {
       "id": 6,
       "name": "Spain",
-      "iso2": "es"
+      "iso2": "ES"
     },
     {
       "id": 7,
       "name": "Morocco",
-      "iso2": "ma"
+      "iso2": "MA"
     },
     {
       "id": 8,
       "name": "Iran",
-      "iso2": "ir"
+      "iso2": "IR"
     },
     {
       "id": 9,
       "name": "France",
-      "iso2": "fr"
+      "iso2": "FR"
     },
     {
       "id": 10,
       "name": "Australia",
-      "iso2": "au"
+      "iso2": "AU"
     },
     {
       "id": 11,
       "name": "Peru",
-      "iso2": "pe"
+      "iso2": "PE"
     },
     {
       "id": 12,
       "name": "Denmark",
-      "iso2": "dk"
+      "iso2": "DK"
     },
     {
       "id": 13,
       "name": "Argentina",
-      "iso2": "ar"
+      "iso2": "AR"
     },
     {
       "id": 14,
       "name": "Iceland",
-      "iso2": "is"
+      "iso2": "IS"
     },
     {
       "id": 15,
       "name": "Croatia",
-      "iso2": "hr"
+      "iso2": "HR"
     },
     {
       "id": 16,
       "name": "Nigeria",
-      "iso2": "ng"
+      "iso2": "NG"
     },
     {
       "id": 17,
       "name": "Brazil",
-      "iso2": "br"
+      "iso2": "BR"
     },
     {
       "id": 18,
       "name": "Switzerland",
-      "iso2": "ch"
+      "iso2": "CH"
     },
     {
       "id": 19,
       "name": "Costa Rica",
-      "iso2": "cr"
+      "iso2": "CR"
     },
     {
       "id": 20,
       "name": "Serbia",
-      "iso2": "rs"
+      "iso2": "RS"
     },
     {
       "id": 21,
       "name": "Germany",
-      "iso2": "de"
+      "iso2": "DE"
     },
     {
       "id": 22,
       "name": "Mexico",
-      "iso2": "mx"
+      "iso2": "MX"
     },
     {
       "id": 23,
       "name": "Sweden",
-      "iso2": "se"
+      "iso2": "SE"
     },
     {
       "id": 24,
       "name": "South Korea",
-      "iso2": "kr"
+      "iso2": "KR"
     },
     {
       "id": 25,
       "name": "Belgium",
-      "iso2": "be"
+      "iso2": "BE"
     },
     {
       "id": 26,
       "name": "Panama",
-      "iso2": "pa"
+      "iso2": "PA"
     },
     {
       "id": 27,
       "name": "Tunisia",
-      "iso2": "tn"
+      "iso2": "TN"
     },
     {
       "id": 28,
       "name": "England",
-      "iso2": "gb-eng"
+      "iso2": "EN"
     },
     {
       "id": 29,
       "name": "Poland",
-      "iso2": "pl"
+      "iso2": "PL"
     },
     {
       "id": 30,
       "name": "Senegal",
-      "iso2": "sn"
+      "iso2": "SN"
     },
     {
       "id": 31,
       "name": "Columbia",
-      "iso2": "co"
+      "iso2": "CO"
     },
     {
       "id": 32,
       "name": "Japan",
-      "iso2": "jp"
+      "iso2": "JP"
     }
   ],
   "groups": {
@@ -878,30 +878,6 @@ export const APIWC = [
         {
           "name": 51,
           "type": "qualified",
-          "home_team": "winner_b",
-          "away_team": "runner_a",
-          "home_result": null,
-          "away_result": null,
-          "date": "2018-07-01T17:00:00+03:00",
-          "stadium": 1,
-          "channels": [],
-          "finished": false
-        },
-        {
-          "name": 52,
-          "type": "qualified",
-          "home_team": "winner_d",
-          "away_team": "runner_c",
-          "home_result": null,
-          "away_result": null,
-          "date": "2018-07-01T21:00:00+03:00",
-          "stadium": 6,
-          "channels": [],
-          "finished": false
-        },
-        {
-          "name": 53,
-          "type": "qualified",
           "home_team": "winner_e",
           "away_team": "runner_f",
           "home_result": null,
@@ -912,7 +888,7 @@ export const APIWC = [
           "finished": false
         },
         {
-          "name": 54,
+          "name": 52,
           "type": "qualified",
           "home_team": "winner_g",
           "away_team": "runner_h",
@@ -923,6 +899,32 @@ export const APIWC = [
           "channels": [],
           "finished": false
         },
+        {
+          "name": 53,
+          "type": "qualified",
+          "home_team": "winner_b",
+          "away_team": "runner_a",
+          "home_result": null,
+          "away_result": null,
+          "date": "2018-07-01T17:00:00+03:00",
+          "stadium": 1,
+          "channels": [],
+          "finished": false
+        },
+        {
+          "name": 54,
+          "type": "qualified",
+          "home_team": "winner_d",
+          "away_team": "runner_c",
+          "home_result": null,
+          "away_result": null,
+          "date": "2018-07-01T21:00:00+03:00",
+          "stadium": 6,
+          "channels": [],
+          "finished": false
+        },
+        
+        
         {
           "name": 55,
           "type": "qualified",
@@ -935,6 +937,8 @@ export const APIWC = [
           "channels": [],
           "finished": false
         },
+        
+        
         {
           "name": 56,
           "type": "qualified",
@@ -967,8 +971,8 @@ export const APIWC = [
         {
           "name": 58,
           "type": "winner",
-          "home_team": 53,
-          "away_team": 54,
+          "home_team": 51,
+          "away_team": 52,
           "home_result": null,
           "away_result": null,
           "date": "2018-07-06T21:00:00+03:00",
@@ -979,8 +983,8 @@ export const APIWC = [
         {
           "name": 59,
           "type": "winner",
-          "home_team": 51,
-          "away_team": 52,
+          "home_team": 53,
+          "away_team": 54,
           "home_result": null,
           "away_result": null,
           "date": "2018-07-07T21:00:00+03:00",
@@ -1026,23 +1030,6 @@ export const APIWC = [
           "away_result": null,
           "date": "2018-07-11T21:00:00+03:00",
           "stadium": 1,
-          "channels": [],
-          "finished": false
-        }
-      ]
-    },
-    "round_2_loser": {
-      "name": "Third place play-off",
-      "matches": [
-        {
-          "name": 63,
-          "type": "loser",
-          "home_team": 61,
-          "away_team": 62,
-          "home_result": null,
-          "away_result": null,
-          "date": "2018-07-14T17:00:00+03:00",
-          "stadium": 3,
           "channels": [],
           "finished": false
         }

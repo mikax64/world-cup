@@ -1,1 +1,548 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
+
+body{
+    background: url("assets/pattern_bg.png") repeat;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    margin: 0 100px;
+}
+
+.worldcupTitle{
+    font-size: 64px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color:#fff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    line-height: 30px;
+    margin: 0;
+    padding-top: 30px;
+}
+.worldcupTitle p{
+    line-height: 60px;
+    margin:0 0 0 10px;
+}
+.worldcupSubtitle{
+    font-size: 24px;
+    color:#debe83;
+    font-weight: 600;
+    max-width: 1000px;
+    margin: 20px auto 40px auto;
+}
+.moscowChurch{
+    display: inline-block;
+    width: 188px;
+    height: 269px;;
+    background: url("assets/moscow_church.png") no-repeat;
+    flex-shrink: 0;
+}
+.groupWrapper{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.group{
+    background: #debe83;
+    border-radius: 5px;
+    position: relative;
+    min-width: 370px;
+    margin: 0 15px 60px 15px;
+    padding-bottom: 15px;
+}
+.group .flag{
+    margin:0 8px;
+}
+.groupTitle{
+    font-size: 20px;
+    color:#fff;
+    padding: 2px 0;
+    border-radius: 5px;
+    border:1px solid #debe83;
+    background: #b11016;
+    width: 160px;
+    position: absolute;
+    top:-30px;
+    left: calc(50% - 80px);
+
+}
+.groupMatchs{
+    padding:0;
+    margin-top: 30px;
+}
+.groupMatchs li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ffe4b3;
+}
+.groupMatchs li:last-child{
+    border:none;
+}
+.groupMatchs_separator{
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0 5px;
+    color:#580003;
+}
+.groupMatchs_team{
+    display: flex;
+    align-items: center;
+    width: 170px;
+}
+.groupMatchs_team.is-team1{
+    justify-content: flex-end;
+}
+
+.groupMatchs_teamScore, .round_teamScore{
+    width:26px ;
+    height: 25px;
+    text-align: center;
+    border:none;
+    border-radius: 3px;
+    color:#580003;
+    font-size: 20px;
+    font-family: "Open Sans";
+    font-weight: 700;
+}
+.groupMatchs_teamName{
+    font-size: 16px;
+    font-weight: 700;
+    color:#580003;
+}
+.groupRanking_labels{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: 700;
+    padding:0;
+    list-style-type: none;
+    background: #001d58;
+    color: #fff;
+    border-radius: 3px;
+    margin:0 10px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
+.groupRanking_labels li{
+    flex:1;
+    text-align: center;
+}
+.groupRanking_labels li:first-child{
+    flex:4;
+    text-align: left;
+}
+.groupRanking_table{
+    font-size: 16px;
+    font-weight: 700;
+    padding:0;
+    list-style-type: none;
+    border-radius: 3px;
+    margin:0 10px;
+}
+.groupRanking_table li{
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    padding: 3px 10px;  
+    border-radius: 3px;
+    margin-top: 8px;
+    position: relative;
+    color: #580003;
+}
+.groupRanking_table li:first-child, .groupRanking_table li:nth-child(2){
+    background:#f7e3be;
+}
+.groupRanking_table li:first-child .groupRanking_team, 
+.groupRanking_table li:nth-child(2) .groupRanking_team,
+.groupRanking_table li:first-child .groupRanking_points, 
+.groupRanking_table li:nth-child(2) .groupRanking_points{
+    color:#b11016;
+    font-weight: 800;
+}
+.groupRanking_table li p{
+    flex:1;
+    text-align: center;
+    margin: 0;
+}
+.groupRanking_table li p:first-child{
+    flex:4;
+    text-align: left;
+    padding-left: 22px;
+}
+.groupRanking_table .flag{
+    position: absolute;
+    left:0;
+    top: 7px;
+    zoom: .63;
+}
+.groupRanking_diff {
+    color: #715724;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/***** KNOCKOUT ****/
+.knockout{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.knockout_title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 2rem 0;
+}
+
+.round {
+    margin: 0 30px 0 0;
+}
+
+.round_title {
+    font-size: 20px;
+    color:#fff;
+    padding: 2px 0;
+    border-radius: 5px;
+    border:1px solid #debe83;
+    background: #b11016;
+    width: 260px;
+}
+
+.roundMatches {
+    padding: 0;
+    list-style-type: none;
+    width: 260px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.roundMatches li{
+    margin-bottom: 20px;
+}
+
+.round_team{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 2rem 0;
+    padding: 6px 0;
+    border-radius:3px 3px 0 0;
+    background: #debe83;
+    margin:0;
+}
+.round_team.is-team2{
+    border-radius:0 0 3px 3px;
+    margin-top:1px;
+}
+
+.round_teamName {
+    font-size: 16px;
+    font-weight: 700;
+    color: #580003;
+    margin-right: 10px;
+}
+
+.round_teamScore {
+    margin: 0 10px;
+}
+
+.roundWinner {
+    display: block;;
+    width:20px;
+    height:20px;
+    background: #fff;
+    border: 2px solid #6b2a0c;
+    border-radius: 100%;
+    box-shadow: inset 0px 1px 6px 0px rgba(0,0,0,0.5);
+    margin:0 auto 0 10px;
+    cursor:pointer;
+    position:relative;
+}
+.round_team.is-winner .roundWinner::after{
+    display: block;
+}
+.roundWinner::after{
+    content: "";
+    display: none;
+    border-right: 3px solid #b11016;
+    border-bottom: 3px solid #b11016;
+    width: 5px;
+    height: 17px;
+    left: 11px;
+    top: -5px;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**** SPRITE FLAGS ****/
+
+
+.flag { 
+    background-size: 7200px 7200px;
+    background-position: 0;
+    background-image: url('assets/spriteFlags.svg');    
+    display: block;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    zoom: .75;  
+}
+
+.is-AD {background-position: 0 0px;}
+.is-AE {background-position: -32px -32px;}	
+.is-AF {background-position: -64px -64px;}
+.is-AG {background-position: -96px -96px;}
+.is-AI {background-position: -128px -128px;}
+.is-AL {background-position: -160px -160px;}
+.is-AM {background-position: -192px -192px;}
+.is-AO {background-position: -224px -224px;}
+.is-AR {background-position: -256px -256px;}
+.is-AS {background-position: -288px -288px;}
+.is-AT {background-position: -320px -320px;}
+.is-AU {background-position: -352px -352px;}
+.is-AW {background-position: -384px -384px;}
+.is-AX {background-position: -416px -416px;}
+.is-AZ {background-position: -448px -448px;}
+.is-BA {background-position: -480px -480px;}
+.is-BB {background-position: -512px -512px;}
+.is-BD {background-position: -544px -544px;}
+.is-BE {background-position: -576px -576px;}
+.is-BF {background-position: -608px -608px;}
+.is-BG {background-position: -640px -640px;}
+.is-BH {background-position: -672px -672px;}
+.is-BI {background-position: -704px -704px;}
+.is-BJ {background-position: -736px -736px;}
+.is-BM {background-position: -768px -768px;}
+.is-BN {background-position: -800px -800px;}
+.is-BO {background-position: -832px -832px;}
+.is-BR {background-position: -864px -864px;}
+.is-BS {background-position: -896px -896px;}
+.is-BT {background-position: -928px -928px;}
+.is-BW {background-position: -960px -960px;}
+.is-BY {background-position: -992px -992px;}
+.is-CA {background-position: -1024px -1024px;}
+.is-CC {background-position: -1056px -1056px;}
+.is-CD {background-position: -1088px -1088px;}
+.is-CF {background-position: -1120px -1120px;}
+.is-CG {background-position: -1152px -1152px;}
+.is-CH {background-position: -1184px -1184px;}
+.is-CI {background-position: -1216px -1216px;}
+.is-CK {background-position: -1248px -1248px;}
+.is-CL {background-position: -1280px -1280px;}
+.is-CM {background-position: -1312px -1312px;}
+.is-CN {background-position: -1344px -1344px;}
+.is-CO {background-position: -1376px -1376px;}
+.is-CR {background-position: -1408px -1408px;}
+.is-CU {background-position: -1440px -1440px;}
+.is-CV {background-position: -1472px -1472px;}
+.is-CX {background-position: -1504px -1504px;}
+.is-CY {background-position: -1536px -1536px;}
+.is-CZ {background-position: -1568px -1568px;}
+.is-DE {background-position: -1600px -1600px;}
+.is-DJ {background-position: -1632px -1632px;}
+.is-DK {background-position: -1664px -1664px;}
+.is-DM {background-position: -1696px -1696px;}
+.is-DO {background-position: -1728px -1728px;}
+.is-DZ {background-position: -1760px -1760px;}
+.is-EC {background-position: -1792px -1792px;}
+.is-EE {background-position: -1824px -1824px;}
+.is-EG {background-position: -1856px -1856px;}
+.is-EH {background-position: -1888px -1888px;}
+.is-ER {background-position: -1920px -1920px;}
+.is-ES {background-position: -1952px -1952px;}
+.is-ET {background-position: -1984px -1984px;}
+.is-EU {background-position: -2016px -2016px;}
+.is-FI {background-position: -2048px -2048px;}
+.is-FJ {background-position: -2080px -2080px;}
+.is-FM {background-position: -2112px -2112px;}
+.is-FO {background-position: -2144px -2144px;}
+.is-FR, .is-GP, .is-MF, .is-NC {background-position: -2176px -2176px;}
+.is-GA {background-position: -2208px -2208px;}
+.is-GB {background-position: -2240px -2240px;}
+.is-GD {background-position: -2272px -2272px;}
+.is-GE {background-position: -2304px -2304px;}
+.is-GG {background-position: -2336px -2336px;}
+.is-GH {background-position: -2368px -2368px;}
+.is-GI {background-position: -2400px -2400px;}
+.is-GM {background-position: -2432px -2432px;}
+.is-GN {background-position: -2464px -2464px;}
+.is-GQ {background-position: -2496px -2496px;}
+.is-GR {background-position: -2528px -2528px;}
+.is-GT {background-position: -2560px -2560px;}
+.is-GU {background-position: -2592px -2592px;}
+.is-GW {background-position: -2624px -2624px;}
+.is-GY {background-position: -2656px -2656px;}
+.is-HK {background-position: -2688px -2688px;}
+.is-HN {background-position: -2720px -2720px;}
+.is-HR {background-position: -2752px -2752px;}
+.is-HT {background-position: -2784px -2784px;}
+.is-HU {background-position: -2816px -2816px;}
+.is-ID {background-position: -2848px -2848px;}
+.is-IE {background-position: -2880px -2880px;}
+.is-IL {background-position: -2912px -2912px;}
+.is-IN {background-position: -2944px -2944px;}
+.is-IO {background-position: -2976px -2976px;}
+.is-IQ {background-position: -3008px -3008px;}
+.is-IR {background-position: -3040px -3040px;}
+.is-IS {background-position: -3072px -3072px;}
+.is-IT {background-position: -3104px -3104px;}
+.is-JE {background-position: -3136px -3136px;}
+.is-JM {background-position: -3168px -3168px;}
+.is-JO {background-position: -3200px -3200px;}
+.is-JP {background-position: -3232px -3232px;}
+.is-KE {background-position: -3264px -3264px;}
+.is-KG {background-position: -3296px -3296px;}
+.is-KH {background-position: -3328px -3328px;}
+.is-KI {background-position: -3360px -3360px;}
+.is-KM {background-position: -3392px -3392px;}
+.is-KN {background-position: -3424px -3424px;}
+.is-KP {background-position: -3456px -3456px;}
+.is-KR {background-position: -3488px -3488px;}
+.is-KW {background-position: -3520px -3520px;}
+.is-KY {background-position: -3552px -3552px;}
+.is-KZ {background-position: -3584px -3584px;}
+.is-LA {background-position: -3616px -3616px;}
+.is-LB {background-position: -3648px -3648px;}
+.is-LC {background-position: -3680px -3680px;}
+.is-LI {background-position: -3712px -3712px;}
+.is-LK {background-position: -3744px -3744px;}
+.is-LR {background-position: -3776px -3776px;}
+.is-LS {background-position: -3808px -3808px;}
+.is-LT {background-position: -3840px -3840px;}
+.is-LU {background-position: -3872px -3872px;}
+.is-LV {background-position: -3904px -3904px;}
+.is-LY {background-position: -3936px -3936px;}
+.is-MA {background-position: -3968px -3968px;}
+.is-MC {background-position: -4000px -4000px;}
+.is-MD {background-position: -4032px -4032px;}
+.is-ME {background-position: -4064px -4064px;}
+.is-MG {background-position: -4096px -4096px;}
+.is-MK {background-position: -4128px -4128px;}
+.is-ML {background-position: -4160px -4160px;}
+.is-MM {background-position: -4192px -4192px;}
+.is-MN {background-position: -4224px -4224px;}
+.is-MO {background-position: -4256px -4256px;}
+.is-MP {background-position: -4288px -4288px;}
+.is-MQ {background-position: -4320px -4320px;}
+.is-MR {background-position: -4352px -4352px;}
+.is-MS {background-position: -4384px -4384px;}
+.is-MT {background-position: -4416px -4416px;}
+.is-MU {background-position: -4448px -4448px;}
+.is-MV {background-position: -4480px -4480px;}
+.is-MW {background-position: -4512px -4512px;}
+.is-MX {background-position: -4544px -4544px;}
+.is-MY {background-position: -4576px -4576px;}
+.is-MZ {background-position: -4608px -4608px;}
+.is-NA {background-position: -4640px -4640px;}
+.is-ND {background-position: -4672px -4672px;}
+.is-NE {background-position: -4704px -4704px;}
+.is-NG {background-position: -4736px -4736px;}
+.is-NI {background-position: -4768px -4768px;}
+.is-NL {background-position: -4800px -4800px;}
+.is-NO {background-position: -4832px -4832px;}
+.is-NP {background-position: -4864px -4864px;}
+.is-NR {background-position: -4896px -4896px;}
+.is-NU {background-position: -4928px -4928px;}
+.is-NZ {background-position: -4960px -4960px;}
+.is-OM {background-position: -4992px -4992px;}
+.is-PA {background-position: -5024px -5024px;}
+.is-PE {background-position: -5056px -5056px;}
+.is-PF {background-position: -5088px -5088px;}
+.is-PG {background-position: -5120px -5120px;}
+.is-PH {background-position: -5152px -5152px;}
+.is-PI {background-position: -5184px -5184px;}
+.is-PK {background-position: -5216px -5216px;}
+.is-PL {background-position: -5248px -5248px;}
+.is-PN {background-position: -5280px -5280px;}
+.is-PR {background-position: -5312px -5312px;}
+.is-PT {background-position: -5344px -5344px;}
+.is-PW {background-position: -5376px -5376px;}
+.is-PY {background-position: -5408px -5408px;}
+.is-QA {background-position: -5440px -5440px;}
+.is-RO {background-position: -5472px -5472px;}
+.is-RU {background-position: -5504px -5504px;}
+.is-RW {background-position: -5536px -5536px;}
+.is-SA {background-position: -5568px -5568px;}
+.is-SB {background-position: -5600px -5600px;}
+.is-SC {background-position: -5632px -5632px;}
+.is-SD {background-position: -5664px -5664px;}
+.is-SE {background-position: -5696px -5696px;}
+.is-SG {background-position: -5728px -5728px;}
+.is-SI {background-position: -5760px -5760px;}
+.is-SK {background-position: -5792px -5792px;}
+.is-SL {background-position: -5824px -5824px;}
+.is-SM {background-position: -5856px -5856px;}
+.is-SN {background-position: -5888px -5888px;}
+.is-SO {background-position: -5920px -5920px;}
+.is-SR {background-position: -5952px -5952px;}
+.is-SS {background-position: -5984px -5984px;}
+.is-ST {background-position: -6016px -6016px;}
+.is-SV {background-position: -6048px -6048px;}
+.is-SY {background-position: -6080px -6080px;}
+.is-SZ {background-position: -6112px -6112px;}
+.is-TC {background-position: -6144px -6144px;}
+.is-TD {background-position: -6176px -6176px;}
+.is-TG {background-position: -6208px -6208px;}
+.is-TH {background-position: -6240px -6240px;}
+.is-TJ {background-position: -6272px -6272px;}
+.is-TL {background-position: -6304px -6304px;}
+.is-TM {background-position: -6336px -6336px;}
+.is-TN {background-position: -6368px -6368px;}
+.is-TR {background-position: -6400px -6400px;}
+.is-TT {background-position: -6432px -6432px;}
+.is-TW {background-position: -6464px -6464px;}
+.is-TZ {background-position: -6496px -6496px;}
+.is-UA {background-position: -6528px -6528px;}
+.is-UG {background-position: -6560px -6560px;}
+.is-US {background-position: -6592px -6592px;}
+.is-UY {background-position: -6624px -6624px;}
+.is-UZ {background-position: -6656px -6656px;}
+.is-VA {background-position: -6688px -6688px;}
+.is-VE {background-position: -6720px -6720px;}
+.is-VG {background-position: -6752px -6752px;}
+.is-VI {background-position: -6784px -6784px;}
+.is-VN {background-position: -6816px -6816px;}
+.is-VU {background-position: -6848px -6848px;}
+.is-WA {background-position: -6880px -6880px;}
+.is-YE {background-position: -6912px -6912px;}
+.is-YU {background-position: -6944px -6944px;}
+.is-ZA {background-position: -6976px -6976px;}
+.is-ZM {background-position: -7008px -7008px;}
+.is-ZW {background-position: -7040px -7040px}
+.is-ZY, .is-ZZ {background-position: -7072px -7072px;}
+.is-1H {background-position: -7104px -7104px;}
+.is-EN {background-position: -7136px -7136px;}
+.is-RS {background-position: -7168px -7168px;}
+
+
+
+
