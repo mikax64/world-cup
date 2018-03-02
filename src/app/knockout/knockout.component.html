@@ -3,23 +3,23 @@
   Phase finale</h2>
 <div class="knockout">
   <div class="round" *ngFor="let round of dataWorldcup.knockout | keys  ; let i = index;">
-    <h2 class="round_title">{{round.name}}</h2>
+    <h2 class="round_title" (click)="test()">{{round.name}}</h2>
     <ul class="roundMatches">
       <li *ngFor="let match of round.matches; let j = index;">
-        <p class="round_team is-team1" [class.is-winner]="testClass(match.name, match.home_team)">
-            <span class="roundWinner" *ngIf="match.away_result === match.home_result" (click)="winnerDraw(match.name, getTeamName(match.home_team, match.name))"></span>
+        <p class="round_team is-team1" [ngClass]="testClass(match.name, getTeamName(match.home_team, match.name), match.home_result )">
+            <span class="roundWinner" *ngIf="match.away_result === match.home_result && match.home_result != null && match.away_result != null" (click)="winnerDraw(match.name, getTeamName(match.home_team, match.name))"></span>
           <span class="round_teamName">{{getTeamName(match.home_team, match.name)}}</span>
           <span class="flag is-{{getTeamTag(getTeamName(match.home_team, match.name))}}"></span>
-          <input type="number" min="0" class="round_teamScore" [(ngModel)]="match.home_result" (ngModelChange)="calculKnockout(round, match.name)"
-            [disabled]="activeScore(getTeamName(match.home_team, match.name), getTeamName(match.away_team, match.name))" />
+          <input type="number" min="0" pattern="\d*" maxlength="1" class="round_teamScore" [(ngModel)]="match.home_result" (ngModelChange)="_worldcupService.updateKnockout()"
+            [disabled]="activeScore(getTeamName(match.home_team, match.name), getTeamName(match.away_team, match.name))" (focus)="$event.target.select()"/>
 
         </p>
-        <p class="round_team is-team2" [class.is-winner]="testClass(match.name, match.away_team)">
-            <span class="roundWinner" *ngIf="match.away_result === match.home_result" (click)="winnerDraw(match.name, getTeamName(match.away_team, match.name) )"></span>
+        <p class="round_team is-team2" [ngClass]="testClass(match.name, getTeamName(match.away_team, match.name), match.away_result)">
+            <span class="roundWinner" *ngIf="match.away_result === match.home_result && match.home_result != null && match.away_result != null" (click)="winnerDraw(match.name, getTeamName(match.away_team, match.name) )"></span>
           <span class="round_teamName">{{getTeamName(match.away_team, match.name)}}</span>
           <span class="flag is-{{getTeamTag(getTeamName(match.away_team, match.name))}}"></span>
-          <input type="number" min="0" class="round_teamScore" [(ngModel)]="match.away_result" (ngModelChange)="calculKnockout(round, match.name)"
-            [disabled]="activeScore(getTeamName(match.home_team, match.name), getTeamName(match.away_team, match.name))" />
+          <input type="number" min="0" class="round_teamScore" [(ngModel)]="match.away_result" (ngModelChange)="_worldcupService.updateKnockout()"
+            [disabled]="activeScore(getTeamName(match.home_team, match.name), getTeamName(match.away_team, match.name))" (focus)="$event.target.select()" />
           
         </p>
       </li>

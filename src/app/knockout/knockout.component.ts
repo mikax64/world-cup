@@ -12,9 +12,9 @@ export class KnockoutComponent implements OnInit {
   dataWorldcup: any;
   teamsArray : any;
 
-  knockoutData: any;
-  knockoutInfo: KnockoutInfo;
-  knockoutArray: KnockoutInfo[] = [];
+   knockoutData: any;
+   knockoutInfo: KnockoutInfo;
+   knockoutArray: KnockoutInfo[];
 
   constructor(private _worldcupService: WorldcupService) { }
 
@@ -23,6 +23,7 @@ export class KnockoutComponent implements OnInit {
     this.groupArray = this._worldcupService.groupData;
     this.knockoutData = this._worldcupService.knockoutData;
     this.teamsArray  = this._worldcupService.teamsData;
+    this.knockoutArray = this._worldcupService.knockoutArrayService;
     this.initKnockout();
     //this.initScores();
   }
@@ -72,6 +73,7 @@ activeScore(teamHome, teamAway){
   return false;
 }
   getTeamName(team, matchName) {
+
     // for the 16 round
     if (typeof team == "string") {
       let groupName = team.substr(team.length - 1);
@@ -96,88 +98,94 @@ activeScore(teamHome, teamAway){
 
 
     }
-
+  
+    
   }
 
+ 
+
+    
 
 
-  calculKnockout(roundName, matchName) {
+// updateKnockout(winnerTeam?) {
 
-    // Calcul  winner
-    for (var i = 0; i < roundName.matches.length; i++) {
-      if (matchName == roundName.matches[i].name) {
-        let matchResult = 0;
-        let matchData = roundName.matches[i];
+//     // Calcul  winner
+//     for (var i = 0; i < 4; i++) {
+//       let roundName = Object.keys(this.dataWorldcup.knockout)[i];
+//       for (var j = 0; j < this.dataWorldcup.knockout[roundName].matches.length; j++) {
 
-        let homeResult = matchData.home_result;
-        let awayResult = matchData.away_result;
-        let homeTeam = matchData.home_team;
-        let awayTeam = matchData.away_team;
+
+//         let matchResult = 0;
+//         let matchData = this.dataWorldcup.knockout[roundName].matches[j];
+
+//         let homeResult = matchData.home_result;
+//         let awayResult = matchData.away_result;
+//         let homeTeam = matchData.home_team;
+//         let awayTeam = matchData.away_team;
+
         
-        if(homeResult == null){
-          console.log("homeResult");
-          matchData.home_result = 0;
-        }
-        if(awayResult == null){
-          matchData.away_result = 0;
-        }
+        
 
-        matchResult = homeResult - awayResult;
+//         // Put the score 0 to the other input
+//         if(homeResult == null && awayResult!= null){
+   
+//           matchData.home_result = 0;
+//         }
+//         if(awayResult == null && homeResult!= null){
+//           matchData.away_result = 0;
+//         }
+        
+//         matchResult = homeResult - awayResult;
 
-        if (roundName.name == "Round of 16") {
-          let groupNameHome = homeTeam.substr(homeTeam.length - 1);
-          let groupNameAway = awayTeam.substr(awayTeam.length - 1);
+        
+//         // Transform team(winner_a, 49...) to name
+//         if (roundName == "round_16") {
+//           let groupNameHome = homeTeam.substr(homeTeam.length - 1);
+//           let groupNameAway = awayTeam.substr(awayTeam.length - 1);
 
-          homeTeam = this.groupArray[groupNameHome][0].name;
-          awayTeam = this.groupArray[groupNameAway][1].name;
+//           homeTeam = this.groupArray[groupNameHome][0].name;
+//           awayTeam = this.groupArray[groupNameAway][1].name;
+          
+//         } 
+//         else {
 
-        } 
-        else if (roundName.name == "Semi-finals") {
-          for (var j = 0; j < this.knockoutArray.length; j++) {
-
+//           for (var k = 0; k < this.knockoutArray.length; k++) {
+//             if (homeTeam == this.knockoutArray[k].name) {
+//               homeTeam = this.knockoutArray[k].winner;
+//             }
+//             if (awayTeam == this.knockoutArray[k].name) {
+//               awayTeam = this.knockoutArray[k].winner;
+//             }
             
-            if (homeTeam == this.knockoutArray[j].name) {
-              homeTeam = this.knockoutArray[j].winner;
-            }
-            if (awayTeam == this.knockoutArray[j].name) {
-              awayTeam = this.knockoutArray[j].winner;
-            }
-          }
+//           }
 
-        }     
+//         }
         
-        else {
+//         // Push winner name in Array
+//         for (var k = 0; k < this.knockoutArray.length; k++) {
 
-          for (var j = 0; j < this.knockoutArray.length; j++) {
-            if (homeTeam == this.knockoutArray[j].name) {
-              homeTeam = this.knockoutArray[j].winner;
-            }
-            if (awayTeam == this.knockoutArray[j].name) {
-              awayTeam = this.knockoutArray[j].winner;
-            }
-          }
+//           if (matchData.name == this.knockoutArray[k].name) {
+    
+//             if (matchResult > 0) {
+//               this.knockoutArray[k].winner = homeTeam;
+              
+//             } else if (matchResult < 0) {
+//               this.knockoutArray[k].winner = awayTeam;
+//             }else if(homeResult!= null && matchResult == 0 ){
+//               if(homeTeam == winnerTeam || awayTeam == winnerTeam){
+//                 this.knockoutArray[k].winner = winnerTeam;
+//               }
+              
+//             }
+//           }
 
-        }
+//         }
+//       console.log(this.knockoutArray);
+//     }
+//   }
+  
 
-
-        // Push winner name in Array
-        for (var j = 0; j < this.knockoutArray.length; j++) {
-          if (matchName == this.knockoutArray[j].name) {
-
-            if (matchResult > 0) {
-              this.knockoutArray[j].winner = homeTeam;
-            } else if (matchResult < 0) {
-              this.knockoutArray[j].winner = awayTeam;
-            } else {
-              this.knockoutArray[j].winner = null;
-            }
-          }
-
-        }
-      }
-    }
-
-  }
+//   }
 
   // Get team tag for knockout
 
@@ -196,27 +204,32 @@ activeScore(teamHome, teamAway){
   winnerDraw(matchName, teamName) {
 
     for (var j = 0; j < this.knockoutArray.length; j++) {
+      
       if (matchName == this.knockoutArray[j].name) {
         this.knockoutArray[j].winner = teamName;
+        this._worldcupService.updateKnockout(teamName);
       }
+      
     }
+    
+    
+    
   }
 
-  // Get the class winner
-  isWinner(matchName) {
+
+  testClass(matchName, teamName,teamResult){
+
     for (var j = 0; j < this.knockoutArray.length; j++) {
+      
       if (matchName == this.knockoutArray[j].name) {
-        return this.knockoutArray[j].winner;
+
+        if(teamName == this.knockoutArray[j].winner){
+          return "is-winner";
+        }else if(teamName != this.knockoutArray[j].winner && this.knockoutArray[j].winner!=null){
+          return "is-looser"
+        }
       }
-    }
-
-  }
-
-  testClass(matchName, teamName){
-    if(this.isWinner(matchName) === this.getTeamName(teamName, matchName) && this.isWinner(matchName)!= null){
-        return true;
-    }else{
-      return false;
+      
     }
     
 

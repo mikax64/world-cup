@@ -148,13 +148,15 @@ export class GroupMatchsComponent implements OnInit {
                     currentGroup[j].difference -= matchResult;
        
                     }
+                    
                 }
                 
             }
             
+            this._worldcupService.updateKnockout();
         }
 
-    }
+        
 
 
 }

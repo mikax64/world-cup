@@ -240,6 +240,10 @@ input::-webkit-inner-spin-button {
     background: #debe83;
     margin:0;
 }
+.round_team.is-looser{
+    opacity:0.8;
+    filter: grayscale(80%);
+}
 .round_team.is-team2{
     border-radius:0 0 3px 3px;
     margin-top:1px;
@@ -255,7 +259,9 @@ input::-webkit-inner-spin-button {
 .round_teamScore {
     margin: 0 10px;
 }
-
+.round_teamScore[disabled] {
+    background: #f1d7a7;
+}
 .roundWinner {
     display: block;;
     width:20px;
