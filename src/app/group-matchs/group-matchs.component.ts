@@ -24,7 +24,15 @@ export class GroupMatchsComponent implements OnInit {
         this.teamsArray  = this._worldcupService.teamsData;
         this.groupArray = this._worldcupService.groupData;
         this.initGroups();
-        this.resetScores();
+        
+       // reset scores only at the first loading
+        if(this._worldcupService.firstLoading == true){
+            this.resetScores();
+            this._worldcupService.firstLoading = false;
+        }
+        
+        
+        
     }
 
 

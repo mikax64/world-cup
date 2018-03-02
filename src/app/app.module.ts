@@ -11,6 +11,7 @@ import { KnockoutComponent } from './knockout/knockout.component';
 import { KeysPipe } from './keys.pipe';
 import { SortRankingPipe } from './sort-ranking.pipe';
 import { WorldcupService } from './worldcup.service';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { WorldcupService } from './worldcup.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [WorldcupService],
   bootstrap: [AppComponent]

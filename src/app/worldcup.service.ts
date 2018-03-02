@@ -8,6 +8,7 @@ export class WorldcupService {
   public groupData : any;
   public knockoutData : any;
 
+  public firstLoading : boolean;
 
 
   public knockoutArrayService: any;
@@ -19,10 +20,11 @@ export class WorldcupService {
     this.knockoutData = APIWC[0].knockout;
     this.groupData ={};
     this.knockoutArrayService = [];
+    this.firstLoading = true;
    }
 
    updateKnockout(winnerTeam?) {
-
+    
     // Calcul  winner
     for (var i = 0; i < 4; i++) {
       let roundName = Object.keys(this.apiwc.knockout)[i];
@@ -50,7 +52,6 @@ export class WorldcupService {
         }
         
         matchResult = homeResult - awayResult;
-
         
         // Transform team(winner_a, 49...) to name
         if (roundName == "round_16") {
@@ -64,46 +65,54 @@ export class WorldcupService {
         else {
 
           for (var k = 0; k < this.knockoutArrayService.length; k++) {
+
             if (homeTeam == this.knockoutArrayService[k].name) {
+              
               homeTeam = this.knockoutArrayService[k].winner;
+              
             }
             if (awayTeam == this.knockoutArrayService[k].name) {
               awayTeam = this.knockoutArrayService[k].winner;
+              
             }
-            
+
           }
 
         }
-        console.log("home" + homeTeam);
-        console.log("away" + awayTeam);
+        
         
         // Push winner name in Array
         for (var k = 0; k < this.knockoutArrayService.length; k++) {
 
           if (matchData.name == this.knockoutArrayService[k].name) {
-    
+            
+            
             if (matchResult > 0) {
               this.knockoutArrayService[k].winner = homeTeam;
-              
+           
             } else if (matchResult < 0) {
               this.knockoutArrayService[k].winner = awayTeam;
-            }else if(homeResult!= null && matchResult == 0 ){
-              //console.log("WINNERTEAM" + winnerTeam)
+        
+            }else if(homeResult!= null &&  awayResult!= null && matchResult == 0 ){
+              
               if(homeTeam == winnerTeam || awayTeam == winnerTeam){
                 this.knockoutArrayService[k].winner = winnerTeam;
               }
-              if(winnerTeam == undefined){
+              if(homeTeam != winnerTeam && awayTeam != winnerTeam && homeTeam !=this.knockoutArrayService[k].winner && awayTeam !=this.knockoutArrayService[k].winner && this.knockoutArrayService[k].winner!= null){
                 this.knockoutArrayService[k].winner = homeTeam;
               }
+              
+            
+              
               
             }
           }
 
         }
-      
+        
     }
   }
-  //console.log(this.knockoutArrayService);
+
 }
 
 
