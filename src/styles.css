@@ -292,19 +292,22 @@ input::-webkit-inner-spin-button {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/**** NAV BAR ****/
+.navBar{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: #440003;
+    color: #fff;
+    padding: 15px 0;
+    z-index: 10;
+}
+.navBar a{
+    color:#fff;
+    display: inline-block;
+    padding:0 10px;
+}
 
 
 

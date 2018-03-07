@@ -7,7 +7,11 @@
     <h2 class="worldcupSubtitle">Pronostiquez vos scores ou aidez-vous de notre générateur de tirage aléatoire
         mais réaliste basé sur les côtes de chaque équipe !</h2>
 
-
+      <div class="navBar">
+          <a routerLink="/group" routerLinkActive="active-link">PHASE DE POULES</a>
+          <a routerLink="/knockout" routerLinkActive="active-link">PHASE FINALE</a>
+          <a class="randomButton" (click)="_worldcupService.randomResult()">Générer un tirage aléatoire</a>
+      </div>
         
     <router-outlet></router-outlet>
     

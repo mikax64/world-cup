@@ -79,161 +79,193 @@ export const APIWC = [
     {
       "id": 1,
       "name": "Russia",
+      "odd" : 35,
       "iso2": "RU"
     },
     {
       "id": 2,
       "name": "Saudi Arabia",
+      "odd" : 1000,
       "iso2": "SA"
     },
     {
       "id": 3,
       "name": "Egypt",
+      "odd" : 150,
       "iso2": "EG"
     },
     {
       "id": 4,
       "name": "Uruguay",
+      "odd" : 35,
       "iso2": "UY"
     },
     {
       "id": 5,
       "name": "Portugal",
+      "odd" : 22,
       "iso2": "PT"
     },
     {
       "id": 6,
       "name": "Spain",
+      "odd" : 8,
       "iso2": "ES"
     },
     {
       "id": 7,
       "name": "Morocco",
+      "odd" : 300,
       "iso2": "MA"
     },
     {
       "id": 8,
       "name": "Iran",
+      "odd" : 500,
       "iso2": "IR"
     },
     {
       "id": 9,
       "name": "France",
+      "odd" : 6.5,
       "iso2": "FR"
     },
     {
       "id": 10,
       "name": "Australia",
+      "odd" : 300,
       "iso2": "AU"
     },
     {
       "id": 11,
       "name": "Peru",
+      "odd" : 200,
       "iso2": "PE"
     },
     {
       "id": 12,
       "name": "Denmark",
+      "odd" : 80,
       "iso2": "DK"
     },
     {
       "id": 13,
       "name": "Argentina",
+      "odd" : 10,
       "iso2": "AR"
     },
     {
       "id": 14,
       "name": "Iceland",
+      "odd" : 200,
       "iso2": "IS"
     },
     {
       "id": 15,
       "name": "Croatia",
+      "odd" : 35,
       "iso2": "HR"
     },
     {
       "id": 16,
       "name": "Nigeria",
+      "odd" : 200,
       "iso2": "NG"
     },
     {
       "id": 17,
       "name": "Brazil",
+      "odd" : 6,
       "iso2": "BR"
     },
     {
       "id": 18,
       "name": "Switzerland",
+      "odd" : 80,
       "iso2": "CH"
     },
     {
       "id": 19,
       "name": "Costa Rica",
+      "odd" : 300,
       "iso2": "CR"
     },
     {
       "id": 20,
       "name": "Serbia",
+      "odd" : 150,
       "iso2": "RS"
     },
     {
       "id": 21,
       "name": "Germany",
+      "odd" : 5.5,
       "iso2": "DE"
     },
     {
       "id": 22,
       "name": "Mexico",
+      "odd" : 100,
       "iso2": "MX"
     },
     {
       "id": 23,
       "name": "Sweden",
+      "odd" : 100,
       "iso2": "SE"
     },
     {
       "id": 24,
       "name": "South Korea",
+      "odd" : 500,
       "iso2": "KR"
     },
     {
       "id": 25,
       "name": "Belgium",
+      "odd" : 12,
       "iso2": "BE"
     },
     {
       "id": 26,
       "name": "Panama",
+      "odd" : 1000,
       "iso2": "PA"
     },
     {
       "id": 27,
       "name": "Tunisia",
+      "odd" : 500,
       "iso2": "TN"
     },
     {
       "id": 28,
       "name": "England",
+      "odd" : 18,
       "iso2": "EN"
     },
     {
       "id": 29,
       "name": "Poland",
+      "odd" : 50,
       "iso2": "PL"
     },
     {
       "id": 30,
       "name": "Senegal",
+      "odd" : 150,
       "iso2": "SN"
     },
     {
       "id": 31,
       "name": "Columbia",
+      "odd" : 35,
       "iso2": "CO"
     },
     {
       "id": 32,
       "name": "Japan",
+      "odd" : 300,
       "iso2": "JP"
     }
   ],
