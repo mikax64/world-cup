@@ -25,7 +25,6 @@ export class KnockoutComponent implements OnInit {
     this.teamsArray  = this._worldcupService.teamsData;
     this.knockoutArray = this._worldcupService.knockoutArrayService;
     this.initKnockout();
-    //this.initScores();
   }
     // Create knockout Array
 
@@ -46,23 +45,7 @@ export class KnockoutComponent implements OnInit {
 
   }
 
-  initScores() {
-    for (var i = 0; i < 4; i++) {
-        let roundName = Object.keys(this.dataWorldcup.knockout)[i];
 
-        for (var j = 0; j < this.dataWorldcup.knockout[roundName].matches.length; j++) {
-            let matchData = this.dataWorldcup.knockout[roundName].matches[j];
-          if(roundName =="round_16"){
-            matchData.home_result = 0;
-            matchData.away_result = 0;
-          }else{
-            matchData.home_result = null;
-            matchData.away_result = null;
-          }
-            
-        }
-    }   
-}
 
 // Test to active scores and enable input
 activeScore(teamHome, teamAway){

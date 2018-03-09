@@ -4,7 +4,8 @@ body{
     background: url("assets/pattern_bg.png") repeat;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    margin: 0 100px;
+    margin: 0 100px 80px 100px;
+    text-align: center;
 }
 
 .worldcupTitle{
@@ -29,7 +30,7 @@ body{
     color:#debe83;
     font-weight: 600;
     max-width: 1000px;
-    margin: 20px auto 40px auto;
+    margin: 20px auto 60px auto;
 }
 .moscowChurch{
     display: inline-block;
@@ -192,6 +193,7 @@ input::-webkit-inner-spin-button {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
 .knockout_title {
     font-size: 16px;
@@ -298,18 +300,44 @@ input::-webkit-inner-spin-button {
     width: 100%;
     bottom: 0;
     left: 0;
-    background: #440003;
+    background: rgba(68,0,0,0.95);
     color: #fff;
     padding: 15px 0;
     z-index: 10;
+    display: flex;
+    justify-content:center;
+    align-items: center;
 }
 .navBar a{
-    color:#fff;
-    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #580003;
     padding:0 10px;
+    background: #f7e3be;
+    border-radius: 3px;
+    text-decoration: none;
+    margin: 0 15px;
+    padding:4px 8px;
+    text-transform: uppercase;
+    max-width: 170px;
+    line-height: 18px;
+    min-height: 44px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
 }
-
-
+.navLink.active-link{
+    display: none;
+}
+.navBar a.randomButton{
+    border: 1px solid #debe83;
+    background: #b11016;
+    color: #fff;
+    cursor:pointer;
+}
+.navBar a:active{
+    transform:translateX(1px) translateY(2px);
+}
 
 
 /**** SPRITE FLAGS ****/

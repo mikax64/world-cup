@@ -1,6 +1,4 @@
-<button (click)="resetScores()">
-    Reset scores</button>
-    
+   
 <div class="groupWrapper">
     <div class="group" *ngFor="let group of dataWorldcup.groups | keys  ; let i = index;">
 
@@ -11,12 +9,12 @@
                 <p class="groupMatchs_team is-team1">
                     <span class="groupMatchs_teamName">{{getTeamName(match.home_team)}}</span>
                     <span class="flag is-{{getTeamTag(match.home_team)}}"></span>
-                    <input type="number" min="0" class="groupMatchs_teamScore" [(ngModel)]="match.home_result" (ngModelChange)="calculRanking(getGroupName(i))" (focus)="$event.target.select()"
+                    <input type="number" min="0" class="groupMatchs_teamScore" [(ngModel)]="match.home_result" (ngModelChange)="_worldcupService.calculRanking()" (focus)="$event.target.select()"
                     />
                 </p>
                 <span class="groupMatchs_separator">-</span>
                 <p class="groupMatchs_team is-team2">
-                        <input type="number" min="0" class="groupMatchs_teamScore" [(ngModel)]="match.away_result" (ngModelChange)="calculRanking(getGroupName(i))" (focus)="$event.target.select()"
+                        <input type="number" min="0" class="groupMatchs_teamScore" [(ngModel)]="match.away_result" (ngModelChange)="_worldcupService.calculRanking()" (focus)="$event.target.select()"
                         />
                         <span class="flag is-{{getTeamTag(match.away_team)}}"></span>
                     <span class="groupMatchs_teamName">{{getTeamName(match.away_team)}}</span>

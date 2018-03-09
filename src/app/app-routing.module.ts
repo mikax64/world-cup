@@ -6,9 +6,9 @@ import { GroupMatchsComponent } from './group-matchs/group-matchs.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/group', pathMatch: 'full' },
-  { path: 'group', component: GroupMatchsComponent },
-  { path: 'knockout', component: KnockoutComponent }
+  { path: '', redirectTo: '/worldcup', pathMatch: 'full' },
+  { path: 'worldcup', component: GroupMatchsComponent },
+  { path: 'worldcup_knockout', component: KnockoutComponent }
 ];
 
 

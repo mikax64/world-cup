@@ -1,21 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+
   <h1 class="worldcupTitle">
     <span class="moscowChurch"></span>
     <p>World cup<br/>Russia 2018</p>
   </h1>
-    <h2 class="worldcupSubtitle">Pronostiquez vos scores ou aidez-vous de notre générateur de tirage aléatoire
-        mais réaliste basé sur les côtes de chaque équipe !</h2>
+    <h2 class="worldcupSubtitle">Predict your scores or help yourself with our random but realistic draw generator based on each team's odd !</h2>
 
       <div class="navBar">
-          <a routerLink="/group" routerLinkActive="active-link">PHASE DE POULES</a>
-          <a routerLink="/knockout" routerLinkActive="active-link">PHASE FINALE</a>
-          <a class="randomButton" (click)="_worldcupService.randomResult()">Générer un tirage aléatoire</a>
+          <a routerLink="/worldcup" routerLinkActive="active-link" class="navLink">< Group stage</a>
+          <a routerLink="/worldcup_knockout" routerLinkActive="active-link" class="navLink">Final stage ></a>
+          <a *ngIf="this.router.url === '/worldcup'" class="randomButton" (click)="_worldcupService.randomResultGroups()">Random selection of group stage</a>
+          <a *ngIf="this.router.url === '/worldcup_knockout'" class="randomButton" (click)="_worldcupService.randomResultKnockout()">Random selection of final stage</a>
+        
       </div>
         
     <router-outlet></router-outlet>
     
 
 
-</div>
 

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { WorldcupService } from './worldcup.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,6 +10,6 @@ import { WorldcupService } from './worldcup.service';
 export class AppComponent {
   title = 'app';
 
-  constructor(private _worldcupService: WorldcupService) {}
+  constructor(private _worldcupService: WorldcupService, private router: Router) {}
 
 }
