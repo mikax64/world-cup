@@ -1,5 +1,5 @@
-# WorldCup
-
+# WorldCup 2018
+The final project is here https://www.mikadesign.fr/worldcup/
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.4.
 
 ## Development server
